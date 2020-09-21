@@ -14,6 +14,11 @@ class NewsList(generics.ListCreateAPIView):
         print("0")
         serializer = NewsSerializer(data=request.data)
         print("1")
+        # print(serializer)
+        # print(serializer.error)
+        print(serializer.is_valid())
+        print(serializer.errors)
+        # print(serializer.data)
         if serializer.is_valid():
             print("2")
             serializer.save()
